@@ -1,24 +1,24 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Form from "./Form";
-import Items from "./ItemsList";
+import ItemsList from "./ItemsList";
 import "./App.css";
 
 function App() {
   return (
-    <>
-      <div className="wrap">
-        <div className="container">
-          <Form />
-        </div>
-      </div>
-      <div className="wrap invert">
-        <div className="container">
-          <Items />
-        </div>
-      </div>
-    </>
+    <Router>
+      <Routes>
+        <Route path="/newItem" element={<Form />}></Route>
+        <Route path="/" element={<ItemsList />}></Route>
+      </Routes>
+    </Router>
   );
 }
 
-ReactDOM.render(<App />, document.querySelector("#root"));
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
