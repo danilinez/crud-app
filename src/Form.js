@@ -4,7 +4,7 @@ function Form() {
   return (
     <div className="wrap">
       <div className="container">
-        <form action="">
+        <form action="/">
           <h1>
             FORM <span>( Add New Item )</span>
           </h1>

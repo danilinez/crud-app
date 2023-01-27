@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import Items from "./Items";
-import {useNavigate} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 
 function ItemsList() {
   let history = useNavigate();
@@ -17,9 +17,12 @@ function ItemsList() {
     <Fragment>
       <div className="wrap invert">
         <div className="container">
-          <h1>
-            Items <span>( List )</span>
-          </h1>
+          <div className="d-flex align-items-center justify-content-between">
+            <h1>
+              Items <span>( List )</span>
+            </h1>
+            <Link to="/newItem" className="btn btn-primary">Add New</Link>
+          </div>
           <table className="table table-bordered">
             <thead>
               <tr>
